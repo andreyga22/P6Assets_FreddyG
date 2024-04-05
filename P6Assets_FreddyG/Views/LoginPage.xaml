@@ -6,11 +6,18 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="loginbackground"
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Center" Padding="20, 0, 20, 0">
 
-        <Entry x:Name="TxtEmail" Placeholder="Email..." FontSize="30" Keyboard="Email"/>
-        <Entry x:Name="TxtPassrod" Placeholder="Password..." FontSize="30" Keyboard="Text" IsPassword="True" />
-        <Button x:Name="BtnIngresar" Text="Ingresar" BackgroundColor="Green" TextColor="White"></Button>
+        <Entry x:Name="TxtEmail" Placeholder="Email..." PlaceholderColor="Black" FontSize="30" Keyboard="Email"/>
+        <Entry x:Name="TxtPassword" Placeholder="Password..." PlaceholderColor="Black" FontSize="30" Keyboard="Text" IsPassword="True" />
+        <Switch x:Name="SwVerPassword" IsToggled="False" Toggled="SwVerPassword_Toggled" />
+        <Button x:Name="BtnIngresar" Text="Login" BackgroundColor="Green" TextColor="White" Clicked="BtnIngresar_Clicked" Margin="0,5,0,15"></Button>
+        <Button x:Name="BtnSignUp" Text="Sign Up"  Clicked="BtnSignUp_Clicked"></Button>
+        <Label x:Name="LblPasswordRecovery"  Text="Password Recovery" HorizontalTextAlignment="End" Margin="0,15,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
 
     </VerticalStackLayout>
 </ContentPage>
