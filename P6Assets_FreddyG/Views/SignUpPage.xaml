@@ -4,7 +4,16 @@
              x:Class="P6Assets_FreddyG.Views.SingUpPage"
              Title="User Sign Up">
     <VerticalStackLayout Padding="20" BackgroundColor="White">
-        <Entry x:Name="TxtUsername"  Placeholder="Username / email" Margin="0,5,0,5" Keyboard="Email"/>
+        <Entry x:Name="TxtUsername"  Placeholder="Username / email" Margin="0,5,0,5" Keyboard="Email">
+            <Entry.Triggers>
+                <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                    <Setter Property="BackgroundColor" Value="GreenYellow"/>
+                    <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                </Trigger>
+            </Entry.Triggers>
+        </Entry>
         <Entry x:Name="TxtCardId"  Placeholder="Card ID" Margin="0,5,0,5" Keyboard="Numeric"/>
         <Entry x:Name="TxtFirstName"  Placeholder="First Name" Margin="0,5,0,5" />
         <Entry x:Name="TxtLastName"  Placeholder="Last Name" Margin="0,5,0,5"  />
@@ -12,6 +21,14 @@
         <Editor x:Name="TxtAddress"  Placeholder="Address" Margin="0,5,0,5" HeightRequest="100" />
         <Entry x:Name="TxtPassword"  Placeholder="Password" Margin="0,5,0,5"/>
 
+        <Picker x:Name="CboxUserRole" Title="Select User Role" ItemDisplayBinding="{Binding UserRoleDescription}"/>
+
+        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Spacing="10">
+            <Button x:Name="BtnAdd" Text="OK" Clicked="BtnAdd_Clicked" BackgroundColor="Green"/>
+            <Button x:Name="BtnCancel" Text="Cancel" Clicked="BtnCancel_Clicked" Background="Maroon"/>
+
+        </StackLayout>-->
+        
         <Button x:Name="BtnAdd" Text="OK" Margin="0,20,0,5" Clicked="BtnAdd_Clicked" BackgroundColor="Green"/>
         <Button x:Name="BtnCancel" Text="Cancel" Margin="0,5,0,5" Clicked="BtnCancel_Clicked" Background="Maroon"/>
         
