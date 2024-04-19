@@ -19,8 +19,8 @@ public partial class LoginPage : ContentPage
         await Navigation.PushAsync(new SingUpPage());
     }
 
-    private void BtnIngresar_Clicked(object sender, EventArgs e) {
-
+    private async void BtnIngresar_Clicked(object sender, EventArgs e) {
+        await Navigation.PushAsync(new OptionsPage());
     }
 
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e) {
